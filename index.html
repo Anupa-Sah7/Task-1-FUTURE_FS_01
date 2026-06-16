@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anupa Sah | Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            border-radius: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 12px 28px;
+            border: 2px solid #00d4ff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+            min-width: 250px;
+        }
+
+        /* Profile Photo Styles - Fixed */
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid #00d4ff;
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.3);
+            border-color: #7b2cbf;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 2rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards - Dark Theme */
+        .about-card, .education-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .about-card:hover, .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .about-text {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 10px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .info-item i {
+            color: #00d4ff;
+            font-size: 1.2rem;
+            width: 30px;
+        }
+
+        .cgpa-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Skills - Dark Theme */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Projects - Fixed (No Blinking) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            transform: translateY(0);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        .project-content a {
+            color: #00d4ff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .project-content a:hover {
+            color: #7b2cbf;
+        }
+
+        /* Certificates - BLACK THEME */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: #000000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #1a1a1a;
+            transform: translateY(0);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .cert-preview {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #00d4ff;
+        }
+
+        .cert-preview i {
+            font-size: 4rem;
+            color: #00d4ff;
+            transition: all 0.3s;
+        }
+
+        .cert-preview:hover i {
+            transform: scale(1.1);
+            color: #7b2cbf;
+        }
+
+        .cert-preview:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 212, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s;
+            color: #000000;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .cert-info {
+            padding: 1.2rem;
+            background: #000000;
+        }
+
+        .cert-info h3 {
+            color: #00d4ff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-info p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+        }
+
+        .cert-date {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            color: #000000;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        /* Achievements - Dark Theme */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            color: #000000;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .achievement-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .achievement-card h3 {
+            font-weight: bold;
+        }
+
+        /* Profiles */
+        .profiles-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .profile-link {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #00d4ff;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .profile-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+            color: #7b2cbf;
+            border-color: #00d4ff;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info, .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-detail i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000000;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            font-family: inherit;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        footer {
+            background: #000000;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.98);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            margin-top: 50px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #00d4ff;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #00d4ff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Anupa Sah</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Anupa Sah</h1>
+                <div class="hero-tagline">Computer Science Student | Problem Solver | Tech Enthusiast</div>
+                <p class="hero-description">
+                    Passionate about building scalable solutions and solving real-world problems. 
+                    B.Tech CSE student at Aditya University with 200+ LeetCode problems solved
+                    and 8+ professional certifications.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="resumeBtn"><i class="fas fa-download"></i> Download Resume</button>
+                    <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="C:\Users\Dell\Pictures\Screenshots\Screenshot (28).png" alt="Anupa Sah" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="width:280px;height:280px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#7b2cbf);display:none;align-items:center;justify-content:center;margin:0 auto;font-size:120px;">
+                    <i class="fas fa-user-circle" style="color:white;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-card">
+                <p class="about-text">Hi! I'm Anupa Sah, a passionate Computer Science student at Aditya University, Andhra Pradesh. I love solving complex problems and building applications that make a difference. With strong foundation in DSA, I've solved over 200 LeetCode problems and earned multiple certifications including MongoDB, IBM AI, Simplilearn, and Forage Cybersecurity.</p>
+                <div class="info-grid">
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i> Andhra Pradesh, India</div>
+                    <div class="info-item"><i class="fas fa-envelope"></i> anupasah621@gmail.com</div>
+                    <div class="info-item"><i class="fas fa-phone"></i> +91 9704271575</div>
+                    <div class="info-item"><i class="fas fa-graduation-cap"></i> Aditya University (2024-2028)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>Bachelor of Technology in Computer Science & Engineering</h3>
+                <p><strong>Aditya College of Engineering and Technology,JNTUK</strong>, Andhra Pradesh, India</p>
+                <p>2024 - 2028</p>
+                <span class="cgpa-badge">CGPA: 8.79/10</span>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">C / C++</div>
+                <div class="skill-card">Java</div>
+                <div class="skill-card">Python</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">HTML5/CSS3</div>
+                <div class="skill-card">React.js</div>
+                <div class="skill-card">Node.js</div>
+                <div class="skill-card">MongoDB</div>
+                <div class="skill-card">SQL</div>
+                <div class="skill-card">Cloud Computing</div>
+                <div class="skill-card">AI Fundamentals</div>
+                <div class="skill-card">Cybersecurity</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">📊 Client Lead Management System (Mini CRM)</h3>
+                        <p>Full-featured CRM for lead tracking, sales pipeline, and analytics dashboard using MERN stack with JWT authentication.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <a href="https://github.com/Anupa-Sah7" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">🏪 Local Business Website & Live Pitch</h3>
+                        <p>Dynamic business website with live video demonstrations, appointment booking, customer reviews, and real-time chat.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">WebRTC</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <a href="https://github.com/Anupa-Sah7" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">💼 Professional Portfolio</h3>
+                        <p>Modern responsive portfolio with certificate gallery, skills showcase, dark theme, and interactive contact form.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates">
+            <h2 class="section-title">Certifications (8)</h2>
+            <div class="certificates-grid">
+                <div class="cert-card" onclick="alert('Certificate: MongoDB SQL to Document Model\nIssued: June 01, 2026')">
+                    <div class="cert-preview"><i class="fas fa-database"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>From Relational Model (SQL) to MongoDB</h3><span class="cert-date">June 01, 2026</span><span class="cert-badge">MongoDB</span></div>
+                </div>
+                <div class="cert-card" onclick="alert('Certificate: MongoDB Core Concepts\nIssued: May 28, 2026')">
+                    <div class="cert-preview"><i class="fas fa-leaf"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>MongoDB: Core Concepts & Architecture</h3><span class="cert-date">May 28, 2026</span><span class="cert-badge">MongoDB</span></div>
+                </div>
+                <div class="cert-card" onclick="alert('Certificate: IBM AI\nIssued: Feb 18, 2026')">
+                    <div class="cert-preview"><i class="fas fa-robot"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>Getting Started with AI</h3><span class="cert-date">Feb 18, 2026</span><span class="cert-badge">IBM</span></div>
+                </div>
+                <div class="cert-card" onclick="alert('Certificate: Web Development\nIssued: Jan 22, 2026\nCode: 9748846')">
+                    <div class="cert-preview"><i class="fab fa-html5"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>Web Development for Beginners</h3><span class="cert-date">Jan 22, 2026</span><span class="cert-badge">Simplilearn</span></div>
+                </div>
+                <div class="cert-card" onclick="alert('Certificate: Cloud Computing\nIssued: Dec 04, 2025')">
+                    <div class="cert-preview"><i class="fas fa-cloud"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>Introduction to Cloud Computing</h3><span class="cert-date">Dec 04, 2025</span><span class="cert-badge">Simplilearn</span></div>
+                </div>
+                <div class="cert-card" onclick="alert('Certificate: Cybersecurity Simulation\nIssued: May 27, 2026')">
+                    <div class="cert-preview"><i class="fas fa-shield-alt"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>Cybersecurity Job Simulation</h3><span class="cert-date">May 27, 2026</span><span class="cert-badge">Forage</span></div>
+                </div>
+                <div class="cert-card" onclick="alert('Certificate: Tech Sprint Participation\nDec 22, 2025')">
+                    <div class="cert-preview"><i class="fas fa-code"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>Tech Sprint Participation</h3><span class="cert-date">Dec 22, 2025</span><span class="cert-badge">Aditya University</span></div>
+                </div>
+                <div class="cert-card" onclick="alert('Certificate: Tech Sprint Advanced\nJan 05, 2026')">
+                    <div class="cert-preview"><i class="fas fa-laptop-code"></i><div class="overlay"><i class="fas fa-search"></i> VIEW</div></div>
+                    <div class="cert-info"><h3>Tech Sprint (Advanced)</h3><span class="cert-date">Jan 05, 2026</span><span class="cert-badge">Aditya University</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card"><i class="fas fa-code"></i><h3>200+ LeetCode</h3><p>Problems Solved</p></div>
+                <div class="achievement-card"><i class="fas fa-trophy"></i><h3>GDG Hackathon</h3><p>Participant</p></div>
+                <div class="achievement-card"><i class="fas fa-star"></i><h3>CGPA 8.79</h3><p>Academic Excellence</p></div>
+                <div class="achievement-card"><i class="fas fa-certificate"></i><h3>8 Certifications</h3><p>Professional Skills</p></div>
+            </div>
+        </section>
+
+        <section id="profiles">
+            <h2 class="section-title">Coding Profiles</h2>
+            <div class="profiles-grid">
+                <a href="https://github.com/Anupa-Sah7" target="_blank" class="profile-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://leetcode.com/u/Anupa-Sah/" target="_blank" class="profile-link"><i class="fas fa-code"></i> LeetCode</a>
+                <a href="https://www.hackerrank.com/profile/anupasah621" target="_blank" class="profile-link"><i class="fab fa-hackerrank"></i> HackerRank</a>
+                <a href="https://linkedin.com/in/anupasah" target="_blank" class="profile-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><div>Andhra Pradesh, India</div></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i><div>anupasah621@gmail.com</div></div>
+                    <div class="contact-detail"><i class="fas fa-phone"></i><div>+91 9704271575</div></div>
+                    <div class="contact-detail"><i class="fab fa-linkedin"></i><div>linkedin.com/in/anupasah</div></div>
+                    <div class="contact-detail"><i class="fab fa-github"></i><div>github.com/Anupa-Sah7</div></div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required><br><br>
+                        <input type="email" placeholder="Your Email" required><br><br>
+                        <textarea placeholder="Your Message" rows="4" required></textarea><br><br>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Anupa Sah | Aditya University | 8 Certifications | Built with <i class="fas fa-heart" style="color
